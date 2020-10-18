@@ -1,0 +1,113 @@
+.movieRow {
+    margin-bottom: 30px;
+}
+
+.movieRow h2 {
+    margin: 0 0 0 30px;
+    user-select: none;
+}
+
+.movieRow--listarea {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.movieRow--list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.movieRow--item {
+    /* display: inline-block; */
+    min-width: 200px;
+    /* max-width: 200px; */
+    min-height: 300px;
+    transition: all ease 0.3s;
+    user-select: none;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.movieRow--item img {
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    transform: scale(0.9);
+    transition: all ease 0.3s;
+    position: absolute;
+}
+
+.movieRow--item img:hover {
+    transform: scale(1);
+    z-index: 2;
+}
+
+/*Versão tutorial*/
+
+.movieRow--left,
+.movieRow--right {
+    position: absolute;
+    width: 40px;
+    height: 300px;
+    background-color: #00000099;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease 0.25s;
+    overflow: hidden;
+}
+
+.movieRow:hover .movieRow--left,
+.movieRow:hover .movieRow--right {
+    opacity: 1;
+}
+
+.movieRow--left:hover,
+.movieRow--right:hover {
+    background-color: #000000dc;
+}
+
+.movieRow--left {
+    left: 0;
+}
+
+.movieRow--right {
+    right: 0;
+}
+
+@media (max-width: 760px) {
+
+    .movieRow--left,
+    .movieRow--right {
+        opacity: 1;
+        width: 30px;
+        height: 225px;
+    }
+
+    .movieRow--item {
+        min-width: 150px;
+        max-width: 150px;
+        min-height: 220px;
+    }
+
+    .movieRow--item img {
+        transform: scale(0.95);
+        z-index: 1;
+    }
+
+    .movieRow--item img:hover {
+        transform: scale(0.95);
+        z-index: 1;
+    }
+
+}
